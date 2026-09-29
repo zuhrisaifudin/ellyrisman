@@ -155,8 +155,8 @@ flowchart TD
 - **Input Data**: `burnout_indicator` (jurnal), kata kunci spesifik (misal: "frustrasi", "menyerah", "ingin pukul"), keterlambatan pengumpulan tugas (>7 hari), dan kegagalan kuis berulang.
 - **Proses**:
   1. Menghitung *Combined Burnout Score*:
-     $$\text{Burnout Score} = (0.5 \times \text{Journal Burnout}) + (0.2 \times \text{Keyword Weight}) + (0.3 \times \text{Delay Score})$$
-  2. Jika skor agregat $\ge 70$:
+     - `Burnout Score` = `(0.5 × Journal Burnout) + (0.2 × Keyword Weight) + (0.3 × Delay Score)`
+  2. Jika skor agregat ≥ `70`:
      - Mengubah status `users.is_flagged_burnout = true` di `DS1`.
      - Mengirimkan alert prioritas tinggi ke Dashboard Mentor Filament.
      - Memicu pengiriman email empatik otomatis dari sistem.

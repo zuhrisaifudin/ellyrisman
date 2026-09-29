@@ -152,8 +152,8 @@ flowchart TD
   2. Mencocokkan email peserta Zoom dengan email terdaftar di `DSEP`.
   3. Akumulasi total menit bergabung peserta ($\sum \text{duration}$).
   4. Menghitung rasio kehadiran:
-     $$\text{Persentase Kehadiran} = \left( \frac{\text{Total Durasi Join Peserta}}{\text{Durasi Total Event}} \right) \times 100\%$$
-  5. Jika persentase $\ge 75\%$, update `DSEP (EVENT_PARTICIPANTS)` -> `attended = true` dan catat `attendance_timestamp`.
+     - `Persentase Kehadiran` = `(Total Durasi Join Peserta / Durasi Total Event) × 100%`
+  5. Jika persentase ≥ `75%`, update `DSEP (EVENT_PARTICIPANTS)` -> `attended = true` dan catat `attendance_timestamp`.
 - **Output Data**: Data status presensi final terverifikasi.
 
 ### 4.6 Sub-Proses P5.6: Generate & Kirim Sertifikat Event
@@ -202,11 +202,11 @@ DS5: Transactions
 
 1. **Aturan Validasi Kuota (Overbooking Prevention)**:
    - Penguncian baris (*pessimistic locking*) diterapkan saat transaksi event berbayar atau pendaftaran event gratis dilakukan:
-     $$\text{Sisa Kuota} = \text{max\_participants} - \text{current\_participants}$$
-   - Jika $\text{Sisa Kuota} \le 0$, tombol pendaftaran otomatis dinonaktifkan (*Sold Out*).
+     - `Sisa Kuota` = `max_participants` - `current_participants`
+   - Jika `Sisa Kuota` ≤ `0`, tombol pendaftaran otomatis dinonaktifkan (*Sold Out*).
 
 2. **Kriteria Kelulusan Sertifikat Presensi**:
-   $$\text{Attended Status} = \begin{cases} \text{true}, & \text{jika } \frac{\text{Menit Join Peserta}}{\text{Durasi Total Event}} \ge 0.75 \\ \text{false}, & \text{lainnya} \end{cases}$$
+   - `Attended Status` = `true` jika `(Menit Join Peserta / Durasi Total Event) ≥ 75%`, selain itu `false`.
 
 3. **Retensi & Akses Rekaman (Recording Access)**:
    - Tautan rekaman event (`recording_url`) diunggah ke Bunny.net Stream 24 jam pasca-event dan secara otomatis terbuka untuk semua peserta yang terdaftar di `DSEP`.

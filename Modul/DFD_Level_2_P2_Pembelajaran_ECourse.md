@@ -204,10 +204,12 @@ DSCert: Enrollments & Certificates
    - Jika gagal, pengguna wajib membaca pembahasan soal dan menunggu *cooldown* 5 menit sebelum mencoba kembali (*retry*).
 
 3. **Urutan 2-Layer Video Learning Loop**:
-   $$\text{Lesson Access} \longrightarrow \text{Video Besar (Materi)} \longrightarrow \text{Kuis} \longrightarrow \text{Tugas Praktik} \longrightarrow \text{Jurnal Refleksi} \longrightarrow \text{Video Kecil (Empati)}$$
+   `Lesson Access` ➔ `Video Besar (Materi)` ➔ `Kuis` ➔ `Tugas Praktik` ➔ `Jurnal Refleksi` ➔ `Video Kecil (Empati)`
 
 4. **Kriteria Kelulusan E-Course**:
-   $$\text{Status Lulus} = (\text{Total Progress} = 100\%) \land (\forall \text{Assignments} \in \text{Approved}) \land (\text{Post-Test Score} \ge 80)$$
+   - `Total Progress` = `100%`
+   - `Semua Assignment` = `Approved`
+   - `Post-Test Score` ≥ `80`
 
 ---
 
